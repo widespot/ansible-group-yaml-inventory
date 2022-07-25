@@ -1,3 +1,4 @@
+plugin: widespot.group_yaml_inventory.group_yaml
 groups:
 hosts:
   test:
