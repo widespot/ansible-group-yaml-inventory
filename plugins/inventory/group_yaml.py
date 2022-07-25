@@ -24,10 +24,6 @@ DOCUMENTATION = r'''
         hosts:
             description: the hosts.
             required: True
-        plugin:
-            description: Name of the plugin
-            required: true
-            choices: ['group_yaml']
         yaml_extensions:
             description: list of 'valid' extensions for files containing YAML
             type: list
@@ -47,7 +43,7 @@ DOCUMENTATION = r'''
 
 
 class InventoryModule(BaseFileInventoryPlugin):
-    NAME = 'group_yaml'
+    NAME = 'widespot.group_yaml_inventory.group_yaml'
 
     def __init__(self):
         super(InventoryModule, self).__init__()
@@ -80,8 +76,6 @@ class InventoryModule(BaseFileInventoryPlugin):
         elif not isinstance(data, MutableMapping):
             raise AnsibleParserError(
                 'YAML inventory has invalid structure, it should be a dictionary, got: %s' % type(data))
-        elif data.get('plugin') != InventoryModule.NAME:
-            raise AnsibleParserError('Expected a ' + InventoryModule.NAME + ' plugin yaml file')
         elif not isinstance(data.get('hosts'), (list, MutableMapping, NoneType)):
             raise AnsibleParserError('Expected hosts to be a list or a dictionary, got: %s' % type(data.get('hosts')))
 

@@ -1,0 +1,4 @@
+groups:
+hosts:
+  test:
+    groups: [a, b]
