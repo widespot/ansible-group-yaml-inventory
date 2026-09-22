@@ -9,16 +9,16 @@ from ansible.plugins.inventory import BaseFileInventoryPlugin
 NoneType = type(None)
 
 DOCUMENTATION = r'''
-    name: Multi group YAML inventory
+    name: group_yaml
     plugin_type: inventory
     author:
         - Raphaël Joie (@raphaeljoie)
-    short_description:
+    short_description: Multi group YAML inventory
     description:
         - list hosts and group separate
     options:
         groups:
-            description: the hosts.
+            description: the groups.
             required: false
             type: dict
         hosts:
