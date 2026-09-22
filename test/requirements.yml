@@ -1,6 +1,6 @@
 collections:
 - name: widespot.group_yaml_inventory
-  source: ../build/widespot-group_yaml_inventory-0.1.1.tar.gz
+  source: ../build/widespot-group_yaml_inventory-0.1.2.tar.gz
   type: file
 
   # ERROR! Unexpected Exception, this is probably a bug: [Errno 2] No such file or directory: b'./est/README.md'
